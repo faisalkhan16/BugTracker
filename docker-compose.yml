@@ -1,0 +1,81 @@
+version: '3'
+services:
+      ## ZIPKIN
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+
+      ## Eureka Server
+  service-registry:
+    image: faisalkhan16/service-registry:0.1
+    container_name: service-registry
+    pull_policy: always
+    ports:
+      - "8761:8761"
+    depends_on:
+      - zipkin
+      
+    ## API GAteway
+  cloud-gateway:
+    image: faisalkhan16/cloud-gateway:0.1
+    container_name: cloud-gateway
+    pull_policy: always
+    ports:
+      - "9191:9191"
+    depends_on:
+      - zipkin
+      - service-registry
+
+  hystrix-service:
+    container_name: hystrix-service
+    image: faisalkhan16/hystrix-dashboard:0.1
+    pull_policy: always
+    ports:
+      - "9232:9232"
+    depends_on:
+      - zipkin
+      - service-registry
+      - cloud-gateway
+
+  ## Product-Service Docker Compose Config
+  product-service:
+    container_name: product-service
+    image: faisalkhan16/product-service:0.1
+    pull_policy: always
+    ports:
+      - "9004:9004"
+    depends_on:
+      - zipkin
+      - service-registry
+      - cloud-gateway
+      - hystrix-service
+
+        ## Product-Service Docker Compose Config
+  user-service:
+    container_name: user-service
+    image: faisalkhan16/user-service:0.1
+    pull_policy: always
+    ports:
+      - "9002:9002"
+    depends_on:
+      - zipkin
+      - service-registry
+      - cloud-gateway
+      - hystrix-service
+
+        ## Product-Service Docker Compose Config
+  bug-service:
+    container_name: bug-service
+    image: faisalkhan16/bug-service:0.1
+    pull_policy: always
+    ports:
+      - "9003:9003"
+    depends_on:
+      - zipkin
+      - service-registry
+      - cloud-gateway
+      - hystrix-service
+      - product-service
+      - user-service

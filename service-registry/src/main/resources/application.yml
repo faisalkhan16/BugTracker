@@ -1,0 +1,11 @@
+Server:
+  Port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+spring:
+  zipkin:
+    base-url: http://zipkin:9411/

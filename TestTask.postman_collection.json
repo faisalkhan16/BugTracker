@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "88da32ba-1240-4ee6-8be4-fdb3c7011669",
+		"name": "TestTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Bugs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/bugs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"bugs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/users?id=01GGTFP1AJA2C4P0HNM0R9YPDG,01GGTFPBDTP8R9YHP1V9HNPSN2,01GGWK8CADQC31446200AVN5SA,01GGWK82V5K52SQGS1K1DTSN42",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "01GGTFP1AJA2C4P0HNM0R9YPDG,01GGTFPBDTP8R9YHP1V9HNPSN2,01GGWK8CADQC31446200AVN5SA,01GGWK82V5K52SQGS1K1DTSN42"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/products?code=01GGWM8SNJ94HTBXSK8BFT2VA6,01GGWM93GG13NCD5BY4JF9159A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "01GGWM8SNJ94HTBXSK8BFT2VA6,01GGWM93GG13NCD5BY4JF9159A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bug",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/bug/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"bug",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Bug",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assign_by_user_id\": \"01GGWK8CADQC31446200AVN5SA\",\r\n  \"assign_to_user_id\": \"01GGTFPBDTP8R9YHP1V9HNPSN2\",\r\n  \"description\": \"Product Service Is Working\",\r\n  \"name\": \"Product Service Bug\",\r\n  \"product_id\": \"01GGWM93GG13NCD5BY4JF9159A\",\r\n  \"severity_code\": 1,\r\n  \"status_code\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/bug/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"bug",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Bug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"assign_by_user_id\": \"01GGWK8CADQC31446200AVN5SA\",\r\n  \"assign_to_user_id\": \"01GGTFPBDTP8R9YHP1V9HNPSN2\",\r\n  \"description\": \"Product Service Is Working\",\r\n  \"name\": \"Product Service Bug\",\r\n  \"product_id\": \"01GGWM93GG13NCD5BY4JF9159A\",\r\n  \"severity_code\": 1,\r\n  \"status_code\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9009/bugs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9009",
+					"path": [
+						"bugs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments By Bug Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/bugs/1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"bugs",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/comment/01GHF1WVYS92NRFGKWZV422PJX",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"comment",
+						"01GHF1WVYS92NRFGKWZV422PJX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Comment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bug_id\": 2,\r\n  \"description\": \"Bug is not resolved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/comment/01GH225V8G8JWEA4PNR4QACD4Y",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"comment",
+						"01GH225V8G8JWEA4PNR4QACD4Y"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bug_id\": 1,\r\n  \"description\": \"Bug didnt resolve\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
