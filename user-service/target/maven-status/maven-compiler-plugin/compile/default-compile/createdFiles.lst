@@ -1,0 +1,10 @@
+com\codebyte\userservice\dto\UserDTO$UserDTOBuilder.class
+com\codebyte\userservice\service\UserService.class
+com\codebyte\userservice\converter\ULIDConverter.class
+com\codebyte\userservice\dto\UserDTO.class
+com\codebyte\userservice\repository\UserRepository.class
+com\codebyte\userservice\mapper\UserMapper.class
+com\codebyte\userservice\UserServiceApplication.class
+com\codebyte\userservice\controller\UserController.class
+com\codebyte\userservice\entity\User.class
+com\codebyte\userservice\repository\UserInfo.class

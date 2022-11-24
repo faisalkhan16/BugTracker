@@ -9,14 +9,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.time.LocalDate;
 
 @SpringBootApplication
 @EnableEurekaClient
 @RequiredArgsConstructor
-@EnableSwagger2
 public class BugServiceApplication implements CommandLineRunner {
 
 	private final BugRepository bugRepository;

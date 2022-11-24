@@ -25,4 +25,16 @@ public class BugExceptionHandler {
 
         return new ResponseEntity<>(errorDetails,HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(ServiceFallbackException.class)
+    public ResponseEntity<?> serviceFallbackHandler(RequestValidationException exception, WebRequest request) {
+
+        CustomError errorDetails = new CustomError();
+        errorDetails.setStatus("SERVICE ERROR");
+        errorDetails.setHttpStatus(HttpStatus.NOT_FOUND.toString());
+        errorDetails.setMessage(exception.getMessage());
+        errorDetails.setTimestamp(LocalDateTime.now());
+
+        return new ResponseEntity<>(errorDetails,HttpStatus.NOT_FOUND);
+    }
 }

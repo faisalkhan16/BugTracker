@@ -5,26 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af30d9b2-1c05-4bdd-8619-5a3a01e36ca9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/configuration/Resilience4JConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bug-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/BugServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/BugServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/controller/BugController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/controller/BugController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/exception/BugExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/exception/BugExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/service/BugService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/src/main/java/com/codebyte/bugservice/service/BugService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bug-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../bug-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cloud-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cloud-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cloud-gateway/src/main/java/com/codebyte/cloudgateway/CloudGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cloud-gateway/src/main/java/com/codebyte/cloudgateway/CloudGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cloud-gateway/src/main/java/com/codebyte/cloudgateway/FallBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cloud-gateway/src/main/java/com/codebyte/cloudgateway/FallBackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cloud-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../cloud-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hystrix-dashboard/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../hystrix-dashboard/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product-service/src/main/java/com/codebyte/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-service/src/main/java/com/codebyte/productservice/ProductServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product-service/src/main/java/com/codebyte/productservice/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product-service/src/main/java/com/codebyte/productservice/mapper/ProductMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../service-registry/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-registry/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-registry/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-registry/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-registry/target/service-registry-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/target/service-registry-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-registry/target/service-registry-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/target/service-registry-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codebyte/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codebyte/userservice/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codebyte/userservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codebyte/userservice/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codebyte/userservice/UserServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/codebyte/userservice/UserServiceApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,17 +85,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

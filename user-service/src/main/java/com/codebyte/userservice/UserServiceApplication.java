@@ -8,12 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableEurekaClient
 @RequiredArgsConstructor
-@EnableSwagger2
 public class UserServiceApplication implements CommandLineRunner {
 
 	private final UserRepository userRepository;

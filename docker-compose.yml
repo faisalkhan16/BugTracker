@@ -9,7 +9,7 @@ services:
 
       ## Eureka Server
   service-registry:
-    image: faisalkhan16/service-registry:0.1
+    image: faisalkhan16/service-registry:0.2
     container_name: service-registry
     pull_policy: always
     ports:
@@ -19,7 +19,7 @@ services:
       
     ## API GAteway
   cloud-gateway:
-    image: faisalkhan16/cloud-gateway:0.1
+    image: faisalkhan16/cloud-gateway:0.2
     container_name: cloud-gateway
     pull_policy: always
     ports:
@@ -28,21 +28,11 @@ services:
       - zipkin
       - service-registry
 
-  hystrix-service:
-    container_name: hystrix-service
-    image: faisalkhan16/hystrix-dashboard:0.1
-    pull_policy: always
-    ports:
-      - "9232:9232"
-    depends_on:
-      - zipkin
-      - service-registry
-      - cloud-gateway
 
   ## Product-Service Docker Compose Config
   product-service:
     container_name: product-service
-    image: faisalkhan16/product-service:0.1
+    image: faisalkhan16/product-service:0.2
     pull_policy: always
     ports:
       - "9004:9004"
@@ -50,12 +40,11 @@ services:
       - zipkin
       - service-registry
       - cloud-gateway
-      - hystrix-service
 
         ## Product-Service Docker Compose Config
   user-service:
     container_name: user-service
-    image: faisalkhan16/user-service:0.1
+    image: faisalkhan16/user-service:0.2
     pull_policy: always
     ports:
       - "9002:9002"
@@ -63,12 +52,11 @@ services:
       - zipkin
       - service-registry
       - cloud-gateway
-      - hystrix-service
 
         ## Product-Service Docker Compose Config
   bug-service:
     container_name: bug-service
-    image: faisalkhan16/bug-service:0.1
+    image: faisalkhan16/bug-service:0.4
     pull_policy: always
     ports:
       - "9003:9003"
@@ -76,6 +64,35 @@ services:
       - zipkin
       - service-registry
       - cloud-gateway
-      - hystrix-service
       - product-service
       - user-service
+      
+ ## Prometheus
+  prometheus:
+    image: prom/prometheus:v2.37.1
+    container_name: prometheus
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - service-registry
+      - cloud-gateway
+      - product-service
+      - user-service
+      - bug-service
+
+  grafana:
+    image: grafana/grafana-oss:8.5.2
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    links:
+      - prometheus:prometheus
+    volumes:
+      - ./grafana:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=password      

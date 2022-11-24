@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductMapper {
 
     public ProductDTO productToProductDTO(Product product){
-        return ProductDTO.builder().code(product.getUlid()).name(product.getName()).build();
+        return ProductDTO.builder().code(product.getProductUlid()).name(product.getName()).build();
     }
 
     public List<ProductDTO> productsToProductDTOs(List<Product> products){

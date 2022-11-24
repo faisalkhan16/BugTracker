@@ -8,9 +8,9 @@ import com.codebyte.bugservice.dto.BugResponseDTO;
 import com.codebyte.bugservice.entity.Bug;
 import com.codebyte.bugservice.mapper.BugMapper;
 import com.codebyte.bugservice.repository.BugRepository;
-import com.codebyte.bugservice.util.Util;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +28,7 @@ public class BugService {
     private final BugRepository bugRepository;
     private final BugMapper bugMapper;
     private final WebClientConfig webClient;
+    private final CircuitBreakerFactory circuitBreakerFactory;
 
     public List<BugResponseDTO> getBugs() {
         log.info("Inside BugService getBugs()");
@@ -42,26 +43,11 @@ public class BugService {
         List<String> productCodes = bugs.stream()
                 .map(Bug::getProductUlid).collect(Collectors.toList());
 
-        User[] usersAssignBy = webClient.webClientBuilder().build().get()
-                    .uri("http://USER-SERVICE/users",
-                            uriBuilder -> uriBuilder.queryParam("id", idsAssignBy).build())
-                    .retrieve()
-                    .bodyToMono(User[].class)
-                    .block();
+        User[] usersAssignBy = getUsers(idsAssignBy);
 
-        User[] usersAssignTo = webClient.webClientBuilder().build().get()
-                .uri("http://USER-SERVICE/users",
-                        uriBuilder -> uriBuilder.queryParam("id", idsAssignTo).build())
-                .retrieve()
-                .bodyToMono(User[].class)
-                .block();
+        User[] usersAssignTo = getUsers(idsAssignTo);
 
-        Product[] products = webClient.webClientBuilder().build().get()
-                .uri("http://PRODUCT-SERVICE/products",
-                        uriBuilder -> uriBuilder.queryParam("code", productCodes).build())
-                .retrieve()
-                .bodyToMono(Product[].class)
-                .block();
+        Product[] products = getProducts(productCodes);
 
         List<BugResponseDTO> bugResponseDTOs = bugMapper.bugsToBugResponseDTOs(bugs,usersAssignBy,usersAssignTo,products);
 
@@ -100,4 +86,31 @@ public class BugService {
         bugToUpdate.setUpdatedDate(LocalDate.now());
         return bugToUpdate;
     }
+
+    public User[] getUsers(List<String> ids){
+        log.info("Inside BugService getUsers usersIds: {}",ids);
+        User[] users = circuitBreakerFactory.create("bug").run(
+                () -> webClient.webClientBuilder().build().get()
+                        .uri("http://USER-SERVICE/users",
+                                uriBuilder -> uriBuilder.queryParam("id", ids).build())
+                        .retrieve()
+                        .bodyToMono(User[].class)
+                        .block(),
+                t -> new User[0]);
+        return users;
+    }
+
+    public Product[] getProducts(List<String> codes){
+        log.info("Inside BugService getProducts productCodes: {}",codes);
+        Product[]  products = circuitBreakerFactory.create("bug").run(
+                () -> webClient.webClientBuilder().build().get()
+                        .uri("http://PRODUCT-SERVICE/products",
+                                uriBuilder -> uriBuilder.queryParam("code", codes).build())
+                        .retrieve()
+                        .bodyToMono(Product[].class)
+                        .block(),
+                t -> new Product[0]);
+        return products;
+    }
+
 }

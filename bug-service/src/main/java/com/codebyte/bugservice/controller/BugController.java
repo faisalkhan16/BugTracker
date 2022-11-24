@@ -32,6 +32,7 @@ public class BugController {
     @GetMapping(value = "/bugs")
     public ResponseEntity<List<BugResponseDTO>> getBugs()
     {
+        log.info("request: getBugs()");
         List<BugResponseDTO> bugResponseDTOs = bugService.getBugs();
         return ResponseEntity.ok().body(bugResponseDTOs);
     }
