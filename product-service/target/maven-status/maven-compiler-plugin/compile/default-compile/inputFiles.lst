@@ -1,8 +1,0 @@
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\ProductServiceApplication.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\entity\Product.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\mapper\ProductMapper.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\service\ProductService.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\repository\ProductRepository.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\controller\ProductController.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\dto\ProductDTO.java
-D:\git\BugTrackerMicroservices\product-service\src\main\java\com\codebyte\productservice\converter\ULIDConverter.java

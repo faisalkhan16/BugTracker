@@ -1,9 +1,0 @@
-com\codebyte\productservice\mapper\ProductMapper.class
-com\codebyte\productservice\repository\ProductRepository.class
-com\codebyte\productservice\controller\ProductController.class
-com\codebyte\productservice\ProductServiceApplication.class
-com\codebyte\productservice\dto\ProductDTO$ProductDTOBuilder.class
-com\codebyte\productservice\dto\ProductDTO.class
-com\codebyte\productservice\converter\ULIDConverter.class
-com\codebyte\productservice\service\ProductService.class
-com\codebyte\productservice\entity\Product.class

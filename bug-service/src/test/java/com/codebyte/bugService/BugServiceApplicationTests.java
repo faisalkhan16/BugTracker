@@ -2,8 +2,10 @@ package com.codebyte.bugService;
 
 import com.codebyte.bugservice.dto.BugRequestDTO;
 import com.codebyte.bugservice.dto.CommentRequestDTO;
+import com.codebyte.bugservice.mapper.BugMapper;
 import com.codebyte.bugservice.repository.BugRepository;
 import com.codebyte.bugservice.repository.CommentRepository;
+import com.codebyte.bugservice.service.BugService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +26,19 @@ public class BugServiceApplicationTests {
 
     @Autowired
     private BugRepository bugRepository;
+
+    @Autowired
+    private BugService bugService;
+
     @Autowired
     private CommentRepository commentRepository;
     @Autowired
     private MockMvc mockMvc;
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private BugMapper bugMapper;
 
     @Test
     @Order(1)
@@ -148,4 +157,20 @@ public class BugServiceApplicationTests {
                 .assignToUserId("01GGTFP1AJA2C4P0HNM0R9YPDG").build();
     }
 
+    @Test
+    @Order(9)
+    void deleteAllBugs() throws Exception {
+        bugRepository.deleteAll();
+        Assertions.assertEquals(0, bugRepository.findAll().size());
+    }
+
+
+    @Test
+    @Order(10)
+    void saveBug() throws Exception {
+        BugRequestDTO bugRequestDTO = getBugRequest();
+        bugService.saveBug(bugRequestDTO);
+        Assertions.assertEquals(1, bugService.getBugs().size());
+    }
+    
 }
